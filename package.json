@@ -1,0 +1,16 @@
+{
+    "name": "zongorepo",
+    "module": "index.ts",
+    "type": "module",
+    "devDependencies": {
+        "@nestjs/common": "^11.1.3",
+        "@types/bun": "latest"
+    },
+    "peerDependencies": {
+        "typescript": "^5"
+    },
+    "dependencies": {
+        "mongodb": "^6.17.0",
+        "zod": "^3.25.56"
+    }
+}

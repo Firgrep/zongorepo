@@ -1,0 +1,2 @@
+*.sh text eol=lf
+authConfig.ts text eol=lf

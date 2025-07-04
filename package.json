@@ -9,6 +9,9 @@
     "files": [
         "dist"
     ],
+    "scripts": {
+        "ct": "tsc --pretty --noEmit"
+    },
     "devDependencies": {
         "@nestjs/common": "^11.1.3",
         "@types/bun": "1.2.2",

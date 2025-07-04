@@ -1,12 +1,9 @@
 {
     "version": "0.2",
-    "ignorePaths": [],
+    "ignorePaths": ["./.gitignore"],
     "dictionaryDefinitions": [],
     "dictionaries": [],
-    "words": [
-        "Insertable",
-        "zongorepo"
-    ],
+    "words": ["Insertable", "npmjs", "zongorepo"],
     "ignoreWords": [],
     "import": []
 }

@@ -1,12 +1,4 @@
 {
     "extends": "./tsconfig.json",
-    "exclude": [
-        "node_modules",
-        "dist",
-        "test",
-        "scripts",
-        "**/*spec.ts",
-        "test/mocks/email-module.js",
-        "test/mocks/email-service.js"
-    ]
+    "exclude": ["node_modules", "dist", "test", "scripts", "**/*spec.ts"]
 }

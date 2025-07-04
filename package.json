@@ -10,7 +10,7 @@
         "dist"
     ],
     "scripts": {
-        "build": "tsc",
+        "build": "tsc -p tsconfig.build.json",
         "ct": "tsc --pretty --noEmit",
         "test": "vitest",
         "test:ci": "vitest run",

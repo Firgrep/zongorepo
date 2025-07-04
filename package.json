@@ -11,14 +11,18 @@
     ],
     "scripts": {
         "build": "tsc",
-        "ct": "tsc --pretty --noEmit"
+        "ct": "tsc --pretty --noEmit",
+        "test": "vitest",
+        "test:ci": "vitest run",
+        "test:baserepo": "vitest src/base.repo.spec.ts"
     },
     "devDependencies": {
         "@nestjs/common": "^11.1.3",
         "@types/bun": "1.2.2",
         "typescript": "^5.8.3",
         "mongodb": "^6.17.0",
-        "zod": "^3.25.56"
+        "zod": "^3.25.56",
+        "vitest": "^3.2.4"
     },
     "peerDependencies": {
         "mongodb": "^6.17.0",

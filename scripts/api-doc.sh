@@ -28,5 +28,3 @@ mv "${README_FILE}.tmp" "$README_FILE"
 rm "$TEMP_BLOCK"
 
 echo "✏️ JSDoc content inserted/updated into README.md"
-
-# TODO add prettier exec after

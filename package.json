@@ -1,6 +1,6 @@
 {
     "name": "zongorepo",
-    "version": "0.0.1-alpha.2",
+    "version": "0.0.1-alpha.3",
     "description": "Base repository with schema validation for MongoDB",
     "author": "Firgrep",
     "license": "Apache-2.0",
@@ -12,7 +12,8 @@
     "scripts": {
         "build": "tsc -p tsconfig.build.json",
         "ct": "tsc --pretty --noEmit",
-        "docs:api": "bun run scripts/api-doc.sh",
+        "docs:api": "bun run scripts/api-doc.sh && bun run format:readme",
+        "format:readme": "bun run prettier --write README.md",
         "test": "vitest",
         "test:ci": "vitest run",
         "test:baserepo": "vitest src/base.repo.spec.ts"
@@ -23,7 +24,8 @@
         "typescript": "^5.8.3",
         "mongodb": "^6.17.0",
         "zod": "^3.25.56",
-        "vitest": "^3.2.4"
+        "vitest": "^3.2.4",
+        "prettier": "^3.6.2"
     },
     "peerDependencies": {
         "mongodb": "^6.17.0",

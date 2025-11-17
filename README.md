@@ -10,15 +10,14 @@ validation using Zod.
 
 **Key Features:**
 
--   🔒 **Type Safety**: Full TypeScript support with runtime validation
--   📋 **Schema Validation**: Uses Zod schemas to validate documents at runtime
--   🎯 **Selective Queries**: Type-safe field selection with dynamic schema
-    generation
--   🔧 **MongoDB Integration**: Wraps MongoDB operations with enhanced error
-    handling
--   📊 **Aggregation Support**: Run aggregation pipelines with optional
-    validation
--   🐛 **Development Tools**: Automatic error logging and debugging support
+- 🔒 **Type Safety**: Full TypeScript support with runtime validation
+- 📋 **Schema Validation**: Uses Zod schemas to validate documents at runtime
+- 🎯 **Selective Queries**: Type-safe field selection with dynamic schema
+  generation
+- 🔧 **MongoDB Integration**: Wraps MongoDB operations with enhanced error
+  handling
+- 📊 **Aggregation Support**: Run aggregation pipelines with optional validation
+- 🐛 **Development Tools**: Automatic error logging and debugging support
 
 **Usage:**
 

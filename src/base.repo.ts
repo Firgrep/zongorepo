@@ -63,12 +63,12 @@ export abstract class RepoBase<T> {
     protected collection: Collection;
     protected logErrorToFile: LogToFileFunction;
     protected logger: LoggerLike;
-    protected schema: z.ZodType<T>;
+    protected schema: z.ZodType<T, z.ZodTypeDef, unknown>;
 
     constructor(
         protected readonly db: Db,
         collectionName: string,
-        schema: z.ZodType<T>,
+        schema: z.ZodType<T, z.ZodTypeDef, unknown>,
         logger?: LoggerLike,
         customLogToFile?: LogToFileFunction,
     ) {

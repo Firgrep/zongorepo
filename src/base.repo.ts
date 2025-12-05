@@ -543,7 +543,7 @@ export abstract class RepoBase<T> {
         if (process.env["DEBUG_DISABLE_DB_ERROR_LOG"] === "true") {
             return;
         }
-        // biome-ignore lint/complexity/useLiteralKeys: <Warning from node>
+        // biome-ignore lint/complexity/useLiteralKeys: <Clashes with node types>
         if (process.env["NODE_ENV"] === "development") {
             void this.logErrorToFile?.(error, context);
         }

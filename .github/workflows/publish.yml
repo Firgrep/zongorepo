@@ -40,7 +40,11 @@ jobs:
         run: pnpm run build
 
       - name: Publish to npm
-        run: pnpm publish --access public --no-git-checks
+        run: |
+          if [[ $(node -p "require('./package.json').version") =~ "-" ]]; then
+            pnpm publish --access public --no-git-checks --tag next
+          else
+            pnpm publish --access public --no-git-checks
+          fi
         env:
-          # setup-node uses this specific var name to authenticate based on registry-url
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

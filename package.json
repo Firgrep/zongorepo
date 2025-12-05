@@ -1,6 +1,6 @@
 {
     "name": "zongorepo",
-    "version": "0.0.1-alpha.3",
+    "version": "0.0.1-alpha.4",
     "description": "Base repository with schema validation for MongoDB",
     "author": "Firgrep",
     "license": "Apache-2.0",

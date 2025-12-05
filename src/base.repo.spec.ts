@@ -1,7 +1,7 @@
+import type { UpdateFilter } from "mongodb";
+import { describe, expect, it } from "vitest";
 import { z } from "zod";
 import { RepoBase } from "./base.repo";
-import type { UpdateFilter } from "mongodb";
-import { describe, it, expect } from "vitest";
 
 const testSchema = z.object({
     name: z.string(),

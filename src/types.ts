@@ -1,4 +1,4 @@
-import type { Condition, Filter, WithId, Document } from "mongodb";
+import type { Condition, Document, Filter, WithId } from "mongodb";
 
 type ResponseStatus = "ok" | "hasErrors";
 

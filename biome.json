@@ -1,0 +1,86 @@
+{
+    "$schema": "https://biomejs.dev/schemas/2.3.6/schema.json",
+    "vcs": {
+        "enabled": true,
+        "clientKind": "git",
+        "useIgnoreFile": true
+    },
+    "files": {
+        "includes": ["**", "!!**/dist"],
+        "ignoreUnknown": false
+    },
+    "formatter": {
+        "indentStyle": "space",
+        "indentWidth": 4,
+        "lineEnding": "lf",
+        "lineWidth": 80
+    },
+    "linter": {
+        "enabled": true,
+        "domains": {
+            "project": "recommended",
+            "react": "recommended",
+            "next": "recommended"
+        },
+        "rules": {
+            "recommended": true
+        }
+    },
+    "javascript": {
+        "formatter": {
+            "semicolons": "always",
+            "quoteStyle": "double",
+            "trailingCommas": "all"
+        },
+        "parser": {
+            "unsafeParameterDecoratorsEnabled": true
+        }
+    },
+    "overrides": [
+        {
+            "includes": [
+                "**/*.controller.ts",
+                "**/*.service.ts",
+                "**/*.service.spec.ts",
+                "**/*.service.unit.spec.ts"
+            ],
+            "linter": {
+                "rules": {
+                    "style": {
+                        "useImportType": "off"
+                    }
+                }
+            }
+        },
+        {
+            "includes": ["src/**"],
+            "linter": {
+                "rules": {
+                    "correctness": {
+                        "noUnusedPrivateClassMembers": "off"
+                    },
+                    "suspicious": {
+                        "noExplicitAny": "off",
+                        "noImplicitAnyLet": "off",
+                        "noArrayIndexKey": "off",
+                        "noFallthroughSwitchClause": "off"
+                    },
+                    "style": {
+                        "noNonNullAssertion": "off"
+                    },
+                    "complexity": {
+                        "noStaticOnlyClass": "off"
+                    }
+                }
+            }
+        }
+    ],
+    "assist": {
+        "enabled": true,
+        "actions": {
+            "source": {
+                "organizeImports": "on"
+            }
+        }
+    }
+}

@@ -2,8 +2,8 @@ import type { LoggerLike } from "./types";
 
 export async function defaultLogErrorToFile(err: unknown, context?: string) {
     try {
-        const fs = await import("fs");
-        const path = await import("path");
+        const fs = await import("node:fs");
+        const path = await import("node:path");
 
         const timestamp = new Date().toISOString();
         const logDir = path.join(__dirname, "../../logs");

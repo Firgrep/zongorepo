@@ -1,16 +1,16 @@
 import {
-    Collection,
-    Db,
-    type Filter,
+    type Abortable,
+    type AggregateOptions,
+    type Collection,
+    type Db,
     type Document,
+    type Filter,
+    type FindOptions,
+    type InsertOneResult,
     ObjectId,
     type UpdateFilter,
     type UpdateOptions,
     type WithId,
-    type FindOptions,
-    type Abortable,
-    type AggregateOptions,
-    type InsertOneResult,
 } from "mongodb";
 import { z } from "zod";
 import type {
@@ -123,7 +123,7 @@ export abstract class RepoBase<T> {
     }): Promise<AggregateResponse<U>> {
         try {
             let status: AggregateResponse<U>["status"] = "ok";
-            let error: AggregateResponse<U>["error"] = undefined;
+            let error: AggregateResponse<U>["error"];
 
             const results = await this.collection
                 .aggregate(pipeline, options)
@@ -222,7 +222,7 @@ export abstract class RepoBase<T> {
         const results = await query.toArray();
 
         let status: QueryResponse<T>["status"] = "ok";
-        let error: QueryResponse<T>["error"] = undefined;
+        let error: QueryResponse<T>["error"];
 
         const parsedResults = results.map((result) =>
             dynamicSchema.safeParse(result),
@@ -279,7 +279,7 @@ export abstract class RepoBase<T> {
         );
 
         let status: QueryResponse<T>["status"] = "ok";
-        let error: QueryResponse<T>["error"] = undefined;
+        let error: QueryResponse<T>["error"];
 
         if (!result) {
             return {
@@ -339,7 +339,7 @@ export abstract class RepoBase<T> {
         const funcName = "findOneAndUpdate";
 
         let status: QueryResponse<T>["status"] = "ok";
-        let error: QueryResponse<T>["error"] = undefined;
+        let error: QueryResponse<T>["error"];
 
         const { projection, dynamicSchema } =
             this.generateProjectionAndSchema(select);

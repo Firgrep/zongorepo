@@ -9,10 +9,14 @@ export async function defaultLogErrorToFile(err: unknown, context?: string) {
         const logDir = path.join(__dirname, "../../logs");
         const logFilePath = path.join(logDir, "errors_latest.log");
 
-        if (!(await fs.promises.exists(logDir))) {
+        try {
+            await fs.promises.access(logDir);
+        } catch {
             await fs.promises.mkdir(logDir, { recursive: true });
         }
-        if (!(await fs.promises.exists(logFilePath))) {
+        try {
+            await fs.promises.access(logFilePath);
+        } catch {
             await fs.promises.writeFile(logFilePath, "");
         }
 

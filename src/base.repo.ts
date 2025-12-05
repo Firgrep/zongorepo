@@ -436,8 +436,6 @@ export abstract class RepoBase<T> {
             };
         }
 
-        // FIXME
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         const { error: parseError, data } = dynamicSchema.safeParse(result);
 
         if (parseError) {
@@ -457,8 +455,6 @@ export abstract class RepoBase<T> {
         }
 
         return {
-            // FIXME
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
             data: data ? [data] : [],
             error,
             status,
@@ -543,10 +539,12 @@ export abstract class RepoBase<T> {
     }
 
     protected writeLogErrorIfDev(error: unknown, context: string) {
+        // biome-ignore lint/complexity/useLiteralKeys: <Not applicable>
         if (process.env["DEBUG_DISABLE_DB_ERROR_LOG"] === "true") {
             return;
         }
-        if (process.env.NODE_ENV === "development") {
+        // biome-ignore lint/complexity/useLiteralKeys: <Warning from node>
+        if (process.env["NODE_ENV"] === "development") {
             void this.logErrorToFile?.(error, context);
         }
     }
